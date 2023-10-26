@@ -18,6 +18,14 @@ def addMatrices(rows,cols):
             row1.append(element)
         matrix1.append(row1)
 
-    
+    matrix2 = []
+    for i in range(rows):
+        row2 = []
+        print("Enter elements of matrix 2 at row " , i)
+        for j in range(cols):
+            print("at column " , j)
+            element = int(input("Enter element "))
+            row2.append(element)
+        matrix2.append(row2)
 
     
