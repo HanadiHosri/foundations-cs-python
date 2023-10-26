@@ -53,5 +53,6 @@ def invertDict(input_dict):
             inverted_dict[value] = [key]
         else:
             inverted_dict[value].append(key)
-    
     return inverted_dict
+
+def convertMatrixtoDict(matrix):
