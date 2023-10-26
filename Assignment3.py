@@ -45,16 +45,13 @@ def checkRotation(matrix1,matrix2):
     return "the two matrices are rotations of each other."
   return "the two matrices are not rotations of each other."
 
-def invertDict(dict):
-  new_dict = {}  # Create an empty dictionary to store the inverted values
-  new_values = []
-  new_keys = []
-  for key, value in dict.items():
-    new_values.append(key)
-    new_keys.append(value)
-    #if new_keys has a duplicate inside we check for the old key and add it to a list inside new_values
-  if len(new_keys) != len(set(new_keys)): #in sets we have no duplicates, so if the lengths of the original list and the set are different, that means there were duplicates.
-    new_dict = dict(zip(new_keys, new_values))
+def invertDict(input_dict):
+    inverted_dict = {}
     
-  return new_dict
-                
+    for key, value in input_dict.items():
+        if value not in inverted_dict:
+            inverted_dict[value] = [key]
+        else:
+            inverted_dict[value].append(key)
+    
+    return inverted_dict
