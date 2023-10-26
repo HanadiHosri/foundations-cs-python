@@ -46,9 +46,8 @@ def checkRotation(matrix1,matrix2):
   return "the two matrices are not rotations of each other."
 
 def invertDict(dict):
-   for key, value in dict.items():
-      new_key = value
-      new_value = key
-    for i in new_key:
-      new_dict = {new_key:new_value}
+  new_dict = {}  # Create an empty dictionary to store the inverted values
+  for key, value in dict.items():
+      new_dict[value] = key  # Swap the key and value in the new dictionary
+  return new_dict
                 
