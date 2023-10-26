@@ -41,7 +41,14 @@ def checkRotation(matrix1,matrix2):
   for i in range(len(matrix1)-1):
     for j in range(len(matrix1[0])-1):
       matrix3[i][j] = matrix1[j][i]  
-  if matrix2 == matrix3: #if matrix2 is equal to matrix3 which is the rotaion of matrix one we return that the two matrices are rotations of each other
+  if matrix2 == matrix3: #if matrix2 is equal to matrix3 which is the rotation of matrix one we return that the two matrices are rotations of each other
     return "the two matrices are rotations of each other."
   return "the two matrices are not rotations of each other."
+
+def invertDict(dict):
+   for key, value in dict.items():
+      new_key = value
+      new_value = key
+    for i in new_key:
+      new_dict = {new_key:new_value}
                 
