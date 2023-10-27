@@ -36,7 +36,7 @@ def addMatrices(rows,cols):
 def checkRotation(matrix1,matrix2):
   if len(matrix1) != len(matrix2[0]) or len(matrix1[0]) != len(matrix2): # where len(matrix1) is the number of rows and len(matrix1[0]) is the number of columns of matrix1, same for matrix2
     return "The two matrices are not rotations of each other due to different dimensions."
-   #if the 2 matrices are eligible in siza to be a rotation of each other we continue  
+   #if the 2 matrices are eligible in size to be a rotation of each other we continue  
   matrix3 = [[0 for i in range(len(matrix1))] for j in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the same size as matrix1 and then making it the rotation of matrix1
   for i in range(len(matrix1)-1):
     for j in range(len(matrix1[0])-1):
@@ -49,9 +49,9 @@ def invertDict(input_dict):
     inverted_dict = {}
     
     for key, value in input_dict.items():
-        if value not in inverted_dict:
+        if value not in inverted_dict: #if the value is not in inverted_dict we add a new element to our inverted_dict where the key is the value of input_dict and vise versa 
             inverted_dict[value] = [key]
-        else:
+        else: #if the value already exists in inverted_dict we append the keys (of this value) to inverted_dict at the new key (which is the old value)
             inverted_dict[value].append(key)
     return inverted_dict
 
