@@ -79,3 +79,11 @@ def elementSearch(x,l):
   return index_lst
 
 def mergeSort(l):
+   if len(l) > 1:
+      mid = len(l)//2
+      left_half = l[:mid]
+      right_half = l[mid:]
+
+      mergeSort(left_half)
+      mergeSort(right_half)
+      
