@@ -79,11 +79,21 @@ def elementSearch(x,l):
   return index_lst
 
 def mergeSort(l):
-   if len(l) > 1:
-      mid = len(l)//2
-      left_half = l[:mid]
-      right_half = l[mid:]
+  if len(l) > 1:
+    mid = len(l)//2
+    left_half = l[:mid]
+    right_half = l[mid:]
+    mergeSort(left_half)
+    mergeSort(right_half)
+    i = 0
+    j = 0
+    k = 0
+    while i < len(left_half) and j < len(right_half):
+      if left_half[i] < right_half[j]:
+        l[k] = left_half[i]
+        i += 1
+      else:
+        l[k] = right_half[j]
+        j += 1
+      k += 1
 
-      mergeSort(left_half)
-      mergeSort(right_half)
-      
