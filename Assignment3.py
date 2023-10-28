@@ -49,10 +49,17 @@ def invertDict(input_dict): #O(N) , where N is the number of keys in input_dict
     inverted_dict = {}
     
     for key, value in input_dict.items():
-        if value not in inverted_dict: #if the value is not in inverted_dict we add a new element to our inverted_dict where the key is the value of input_dict and vise versa 
+        if value not in inverted_dict: #if the value is not in inverted_dict we add a new element to our inverted_dict where the key is the value of input_dict and the value is the key of input_dict
             inverted_dict[value] = [key]
         else: #if the value already exists in inverted_dict we append the keys (of this value) to inverted_dict at the new key (which is the old value)
             inverted_dict[value].append(key)
     return inverted_dict
 
 def convertMatrixtoDict(matrix):
+  output_dict = {}
+  values = []
+  for row in range(len(matrix)):
+    key = matrix[row][2]
+    values = matrix[row][:2] + matrix[row][3:] #2 is exclusive , 3 is inclusive
+    output_dict[key] = values
+  return output_dict
