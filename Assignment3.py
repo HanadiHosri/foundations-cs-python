@@ -71,9 +71,11 @@ def checkPalindrome(s):
       return checkPalindrome(s[1:-1]) #1 is inclusive, -1 exclusive
    return False #if the first and last characters are different, it's not a palindrome
 
-def elementSearchSort(x,l):
+def elementSearch(x,l):
   index_lst =[]
   for i in range(len(l)):
     if list[i] == x:
         index_lst.append(i)
   return index_lst
+
+def mergeSort(l):
