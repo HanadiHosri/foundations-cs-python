@@ -1,5 +1,3 @@
-name = input("enter your name :")
-print("Welcome!!", name)
 def displayMenu():
    print("1. Add Matrices\n" + "2. Check Rotation\n" + "3. Invert Dictionary\n" +
         "4. Convert Matrix to Dictionary\n" +"5. Check Palindrome\n" +
@@ -108,6 +106,8 @@ def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI 
   return l
 
 def main():
+   name = input("enter your name :")
+   print("Welcome!!", name)
    choice = 0
    limit = 0
    while choice != 7 and limit < 7:
@@ -115,6 +115,6 @@ def main():
       choice = eval(input("enter your choice :"))
       if choice == 1:
          rows = int(input("enter number of rows :"))
-         cols = int(input("enter number of columns"))
+         cols = int(input("enter number of columns :"))
          addMatrices(rows,cols)
       elif choice == 2:
