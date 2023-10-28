@@ -48,6 +48,7 @@ def invertDict(input_dict): #O(N) , where N is the number of keys in input_dict
     inverted_dict = {}
     
     for key, value in input_dict.items():
+        value = str(value)
         if value not in inverted_dict: #if the value is not in inverted_dict we add a new element to our inverted_dict where the key is the value of input_dict and the value is the key of input_dict
             inverted_dict[value] = [key]
         else: #if the value already exists in inverted_dict we append the keys (of this value) to inverted_dict at the new key (which is the old value)
@@ -125,8 +126,8 @@ def main():
         dictt = {}
         num_keys = int(input("enter number of keys :"))
         for i in range(num_keys):
-          key = input("enter a key :")
           print("for key", i)
+          key = input("enter a key :")
           value = input("enter a value :")
           dictt[key] = [value]
-      print(invertDict(dictt))
+        print(invertDict(dictt))
