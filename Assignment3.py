@@ -39,9 +39,9 @@ def checkRotation(matrix1,matrix2): #O(N^2) , N being the length of rows or colu
   matrix3 = [[0 for j in range(len(matrix1))] for i in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the rotation size of matrix1 and then we introduce the values
   for i in range(len(matrix1)-1): # i goes from 0 to the length of the rows in matrix1 -1, -1 because we start from 0
     for j in range(len(matrix1[0])-1): #j goes from 0 to the length of columns in matrix1 -1 
-      matrix3[i][j] = matrix1[j][i]  
-  if matrix2 == matrix3: #if matrix2 is equal to matrix3 which is the rotation of matrix one we return that the two matrices are rotations of each other
-    return "the two matrices are rotations of each other."
+      matrix3[i][j] = matrix1[j][i]
+      if matrix2[i][j] == matrix3 [i][j]:
+         return "the two matrices are rotations of each other."  
   return "the two matrices are not rotations of each other."
 
 def invertDict(input_dict): #O(N) , where N is the number of keys in input_dict
@@ -116,5 +116,8 @@ def main():
       if choice == 1:
          rows = int(input("enter number of rows :"))
          cols = int(input("enter number of columns :"))
-         addMatrices(rows,cols)
+         print(addMatrices(rows,cols))
       elif choice == 2:
+         matrix1 = eval(input("Enter the first matrix as a nested list: "))
+         matrix2 = eval(input("Enter the second matrix as a nested list: "))
+         print(checkRotation(matrix1,matrix2))
