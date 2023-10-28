@@ -63,3 +63,6 @@ def convertMatrixtoDict(matrix): #O(N) , N being the number of rows in matrix
     values = matrix[row][:2] + matrix[row][3:] #2 is exclusive , 3 is inclusive
     output_dict[key] = values
   return output_dict
+
+def checkPalindrome(s):
+   
