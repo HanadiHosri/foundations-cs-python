@@ -45,7 +45,7 @@ def checkRotation(matrix1,matrix2): #O(N^2) , N being the length of rows or colu
     return "the two matrices are rotations of each other."
   return "the two matrices are not rotations of each other."
 
-def invertDict(input_dict):
+def invertDict(input_dict): #O(N) , where N is the number of keys in input_dict
     inverted_dict = {}
     
     for key, value in input_dict.items():
