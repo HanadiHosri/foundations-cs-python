@@ -67,5 +67,6 @@ def convertMatrixtoDict(matrix): #O(N) , N being the number of rows in matrix
 def checkPalindrome(s):
    if len(s) == 1: #base case, if the string is just 1 character
       return True
-   if  
-   
+   if s[0] == s[-1]: #if the first and last character are the same, check the substring without them
+      return checkPalindrome(s[1:-1]) #1 is inclusive, -1 exclusive
+   return False #if the first and last characters are different, it's not a palindrome
