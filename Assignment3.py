@@ -64,21 +64,21 @@ def convertMatrixtoDict(matrix): #O(N) , N being the number of rows in matrix
     output_dict[key] = values
   return output_dict
 
-def checkPalindrome(s):
+def checkPalindrome(s): #O(N) , N being the length of s / 2
    if len(s) == 1: #base case, if the string is just 1 character
       return True
    if s[0] == s[-1]: #if the first and last character are the same, check the substring without them
       return checkPalindrome(s[1:-1]) #1 is inclusive, -1 exclusive
    return False #if the first and last characters are different, it's not a palindrome
 
-def elementSearch(x,l):
+def elementSearch(x,l): #O(N)
   index_lst =[]
   for i in range(len(l)):
     if list[i] == x:
         index_lst.append(i)
   return index_lst
 
-def mergeSort(l):
+def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI ; O(NlgN) where N is the number of elements in l 
   if len(l) > 1:
     mid = len(l)//2
     left_half = l[:mid]
@@ -96,4 +96,13 @@ def mergeSort(l):
         l[k] = right_half[j]
         j += 1
       k += 1
+    while i < len(left_half):
+       l[k] = left_half[i]
+       i += 1
+       k += 1
+    while j < len(right_half):
+       l[k] = right_half[j]
+       j += 1
+       k += 1
+  return l
 
