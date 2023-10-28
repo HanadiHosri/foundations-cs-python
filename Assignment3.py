@@ -65,4 +65,7 @@ def convertMatrixtoDict(matrix): #O(N) , N being the number of rows in matrix
   return output_dict
 
 def checkPalindrome(s):
+   if len(s) == 1: #base case, if the string is just 1 character
+      return True
+   if  
    
