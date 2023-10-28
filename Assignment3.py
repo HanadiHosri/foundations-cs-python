@@ -4,7 +4,6 @@ def displayMenu():
    print("1. Add Matrices\n" + "2. Check Rotation\n" + "3. Invert Dictionary\n" +
         "4. Convert Matrix to Dictionary\n" +"5. Check Palindrome\n" +
          "6. Search for an Element & Merge Sort\n" + "7. Exit")
-displayMenu()
 
 def addMatrices(rows,cols): #O(N^2) , N being the number of rows or cols
     matrix1 = []
@@ -108,3 +107,14 @@ def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI 
        k += 1
   return l
 
+def main():
+   choice = 0
+   limit = 0
+   while choice != 7 and limit < 7:
+      displayMenu()
+      choice = eval(input("enter your choice :"))
+      if choice == 1:
+         rows = int(input("enter number of rows :"))
+         cols = int(input("enter number of columns"))
+         addMatrices(rows,cols)
+      elif choice == 2:
