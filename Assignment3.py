@@ -55,7 +55,7 @@ def invertDict(input_dict): #O(N) , where N is the number of keys in input_dict
             inverted_dict[value].append(key)
     return inverted_dict
 
-def convertMatrixtoDict(matrix):
+def convertMatrixtoDict(matrix): #O(N) , N being the number of rows in matrix
   output_dict = {}
   values = []
   for row in range(len(matrix)):
