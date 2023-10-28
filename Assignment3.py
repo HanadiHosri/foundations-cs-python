@@ -26,7 +26,7 @@ def addMatrices(rows,cols): #O(N^2) , N being the number of rows or cols
             row2.append(element)
         matrix2.append(row2)
 
-    matrix3 = [[0 for j in range(cols)] for i in range(rows)] 
+    matrix3 = [[0 for j in range(cols)] for i in range(rows)]  #this is a way to introduce an empty matrix with the same dimentions as matrix1 and 2
     for i in range(rows): 
         for j in range(cols):
             matrix3[i][j] = matrix1[i][j] + matrix2[i][j]
@@ -37,7 +37,7 @@ def checkRotation(matrix1,matrix2): #O(N^2) , N being the length of rows or colu
   if len(matrix1) != len(matrix2[0]) or len(matrix1[0]) != len(matrix2): # where len(matrix1) is the number of rows and len(matrix1[0]) is the number of columns of matrix1, same for matrix2
     return "The two matrices are not rotations of each other due to different dimensions."
    #if the 2 matrices are eligible in size to be a rotation of each other we continue  
-  matrix3 = [[0 for i in range(len(matrix1))] for j in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the rotation size of matrix1 and then we introduce the values
+  matrix3 = [[0 for j in range(len(matrix1))] for i in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the rotation size of matrix1 and then we introduce the values
   for i in range(len(matrix1)-1): # i goes from 0 to the length of the rows in matrix1 -1, -1 because we start from 0
     for j in range(len(matrix1[0])-1): #j goes from 0 to the length of columns in matrix1 -1 
       matrix3[i][j] = matrix1[j][i]  
