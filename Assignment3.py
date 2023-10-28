@@ -33,13 +33,13 @@ def addMatrices(rows,cols): #O(N^2) , N being the number of rows or cols
 
     return matrix3
 
-def checkRotation(matrix1,matrix2):
+def checkRotation(matrix1,matrix2): #O(N^2) , N being the length of rows or columns in matrix1
   if len(matrix1) != len(matrix2[0]) or len(matrix1[0]) != len(matrix2): # where len(matrix1) is the number of rows and len(matrix1[0]) is the number of columns of matrix1, same for matrix2
     return "The two matrices are not rotations of each other due to different dimensions."
    #if the 2 matrices are eligible in size to be a rotation of each other we continue  
-  matrix3 = [[0 for i in range(len(matrix1))] for j in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the same size as matrix1 and then making it the rotation of matrix1
-  for i in range(len(matrix1)-1):
-    for j in range(len(matrix1[0])-1):
+  matrix3 = [[0 for i in range(len(matrix1))] for j in range(len(matrix1[0]))] #introducing matrix 3 as an emtpy matrix with the rotation size of matrix1 and then we introduce the values
+  for i in range(len(matrix1)-1): # i goes from 0 to the length of the rows in matrix1 -1, -1 because we start from 0
+    for j in range(len(matrix1[0])-1): #j goes from 0 to the length of columns in matrix1 -1 
       matrix3[i][j] = matrix1[j][i]  
   if matrix2 == matrix3: #if matrix2 is equal to matrix3 which is the rotation of matrix one we return that the two matrices are rotations of each other
     return "the two matrices are rotations of each other."
