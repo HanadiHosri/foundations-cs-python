@@ -121,3 +121,12 @@ def main():
          matrix1 = eval(input("Enter the first matrix as a nested list: "))
          matrix2 = eval(input("Enter the second matrix as a nested list: "))
          print(checkRotation(matrix1,matrix2))
+      elif choice == 3:
+        dictt = {}
+        num_keys = int(input("enter number of keys :"))
+        for i in range(num_keys):
+          key = input("enter a key :")
+          print("for key", i)
+          value = input("enter a value :")
+          dictt[key] = [value]
+      print(invertDict(dictt))
