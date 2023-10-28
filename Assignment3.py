@@ -70,3 +70,10 @@ def checkPalindrome(s):
    if s[0] == s[-1]: #if the first and last character are the same, check the substring without them
       return checkPalindrome(s[1:-1]) #1 is inclusive, -1 exclusive
    return False #if the first and last characters are different, it's not a palindrome
+
+def elementSearchSort(x,l):
+  index_lst =[]
+  for i in range(len(l)):
+    if list[i] == x:
+        index_lst.append(i)
+  return index_lst
