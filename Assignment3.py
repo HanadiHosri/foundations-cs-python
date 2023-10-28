@@ -4,13 +4,13 @@ print("1. Add Matrices\n" + "2. Check Rotation\n" + "3. Invert Dictionary\n" +
         "4. Convert Matrix to Dictionary\n" +"5. Check Palindrome\n" +
          "6. Search for an Element & Merge Sort\n" + "7. Exit")
 
-def addMatrices(rows,cols):
+def addMatrices(rows,cols): #O(N^2) , N being the number of rows or cols
     matrix1 = []
     
     for i in range(rows):
         row1 = []
         print("Enter elements of matrix 1 at row " , i)
-        for j in range(cols): #O(N)
+        for j in range(cols): 
             print("at column " , j)
             element = int(input("Enter element "))
             row1.append(element)
