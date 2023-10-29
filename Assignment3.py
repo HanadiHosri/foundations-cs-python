@@ -106,13 +106,13 @@ def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI 
        k += 1
   return l
 
-def main():
+def main(): #O(n), where n is the number of times the loop iterates.(number of choices)
   name = input("enter your name :")
   print("Welcome!!", name)
   choice = 0
   while choice != 7:
     displayMenu()
-    choice = eval(input("enter your choice :"))
+    choice = int(input("enter your choice :"))
     if choice == 1:
       rows = int(input("enter number of rows :"))
       cols = int(input("enter number of columns :"))
@@ -131,8 +131,8 @@ def main():
         dictt[key] = [value]
       print(invertDict(dictt))
     elif choice == 4:
-      user_matrix = input("enter matrix with student info in each list containing [First Name, Last Name, ID, Job Title, Company] :") #or use m = [["firstname1", "lastname1", "ID1", "jobtitle1", "company1"], ["firstname2","lastname2", "ID2", "jobtitle2", "company2"], ["firstname3", "lastname3", "ID3","jobtitle3", "company3"]]
-      print(convertMatrixtoDict(user_matrix))
+      m = [["firstname1", "lastname1", "ID1", "jobtitle1", "company1"], ["firstname2","lastname2", "ID2", "jobtitle2", "company2"], ["firstname3", "lastname3", "ID3","jobtitle3", "company3"]]
+      print(convertMatrixtoDict(m))
     elif choice == 5:
       str = input("enter a string s :")
       print(checkPalindrome(str))
