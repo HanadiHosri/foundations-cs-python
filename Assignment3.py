@@ -149,3 +149,4 @@ def main(): #O(n), where n is the number of times the loop iterates.(number of c
       print("invalid input")
   print("goodbye!")
 main()
+#O(N^2), Overall, the code's time complexity is determined by the most time-consuming function, which is addMatrices or checkRotation, both with O(N^2) complexity. 
