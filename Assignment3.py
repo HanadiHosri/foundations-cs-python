@@ -107,35 +107,44 @@ def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI 
   return l
 
 def main():
-   name = input("enter your name :")
-   print("Welcome!!", name)
-   choice = 0
-   limit = 0
-   while choice != 7 and limit < 7:
-      displayMenu()
-      choice = eval(input("enter your choice :"))
-      if choice == 1:
-         rows = int(input("enter number of rows :"))
-         cols = int(input("enter number of columns :"))
-         print(addMatrices(rows,cols))
-      elif choice == 2:
-         matrix1 = eval(input("Enter the first matrix as a nested list: "))
-         matrix2 = eval(input("Enter the second matrix as a nested list: "))
-         print(checkRotation(matrix1,matrix2))
-      elif choice == 3:
-        dictt = {}
-        num_keys = int(input("enter number of keys :"))
-        for i in range(num_keys):
-          print("for key", i)
-          key = input("enter a key :")
-          value = input("enter a value :")
-          dictt[key] = [value]
-        print(invertDict(dictt))
-      elif choice == 4:
-        user_matrix = input("enter matrix with student info in each list containing [First Name, Last Name, ID, Job Title, Company] :") #or use m = [["firstname1", "lastname1", "ID1", "jobtitle1", "company1"], ["firstname2","lastname2", "ID2", "jobtitle2", "company2"], ["firstname3", "lastname3", "ID3","jobtitle3", "company3"]]
-        print(convertMatrixtoDict(user_matrix))
-      elif choice == 5:
-        str = input("enter a string s :")
-        print(checkPalindrome(str))
-      elif choice == 6:
-         
+  name = input("enter your name :")
+  print("Welcome!!", name)
+  choice = 0
+  while choice != 7:
+    displayMenu()
+    choice = eval(input("enter your choice :"))
+    if choice == 1:
+      rows = int(input("enter number of rows :"))
+      cols = int(input("enter number of columns :"))
+      print(addMatrices(rows,cols))
+    elif choice == 2:
+      matrix1 = eval(input("Enter the first matrix as a nested list: "))
+      matrix2 = eval(input("Enter the second matrix as a nested list: "))
+      print(checkRotation(matrix1,matrix2))
+    elif choice == 3:
+      dictt = {}
+      num_keys = int(input("enter number of keys :"))
+      for i in range(num_keys):
+        print("for key", i)
+        key = input("enter a key :")
+        value = input("enter a value :")
+        dictt[key] = [value]
+      print(invertDict(dictt))
+    elif choice == 4:
+      user_matrix = input("enter matrix with student info in each list containing [First Name, Last Name, ID, Job Title, Company] :") #or use m = [["firstname1", "lastname1", "ID1", "jobtitle1", "company1"], ["firstname2","lastname2", "ID2", "jobtitle2", "company2"], ["firstname3", "lastname3", "ID3","jobtitle3", "company3"]]
+      print(convertMatrixtoDict(user_matrix))
+    elif choice == 5:
+      str = input("enter a string s :")
+      print(checkPalindrome(str))
+    elif choice == 6:
+      listt = [7, 5, 2, 0, 1, 2, -15, 6, -3]
+      number = eval(input("Enter a number to search for: "))
+      result = elementSearch(number, listt)
+      if len(result) == 0:
+        print("The number was not found in the list")
+      else:
+        print("The number was found at:", result)
+      print(mergeSort(listt))
+    elif choice != 5:
+      print("invalid input")
+  print("goodbye!")
