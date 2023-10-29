@@ -74,7 +74,7 @@ def checkPalindrome(s): #O(N) , N being the length of s / 2
 def elementSearch(x,l): #O(N)
   index_lst =[]
   for i in range(len(l)):
-    if list[i] == x:
+    if l[i] == x:
         index_lst.append(i)
   return index_lst
 
@@ -145,6 +145,7 @@ def main():
       else:
         print("The number was found at:", result)
       print(mergeSort(listt))
-    elif choice != 5:
+    elif choice != 7:
       print("invalid input")
   print("goodbye!")
+main()
