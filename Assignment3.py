@@ -108,7 +108,7 @@ def mergeSort(l): #code edited from https://www.youtube.com/watch?v=cVZMah9kEjI 
 
 def main(): #O(n), where n is the number of times the loop iterates.(number of choices)
   name = input("enter your name :")
-  print("Welcome!!", name)
+  print("Hello, Welcome!!", name)
   choice = 0
   while choice != 7:
     displayMenu()
