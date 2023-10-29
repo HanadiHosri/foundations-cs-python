@@ -132,9 +132,10 @@ def main():
           dictt[key] = [value]
         print(invertDict(dictt))
       elif choice == 4:
-         rows = int(input("enter the number of users :"))
-         matrix1 = []
-         for i in range(rows):
+        rows = int(input("enter the number of users :"))
+        matrix1 = []
+        for i in range(rows):
           print("Enter info of student " , i,"in a list [First Name, Last Name, ID, Job Title, Company]")
-          student_info = input("enter [First Name, Last Name, ID, Job Title, Company]")
+          student_info = input("enter [First Name, Last Name, ID, Job Title, Company] :")
           matrix1.append(student_info)
+        print(convertMatrixtoDict(matrix1))
