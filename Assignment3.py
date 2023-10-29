@@ -132,5 +132,10 @@ def main():
           dictt[key] = [value]
         print(invertDict(dictt))
       elif choice == 4:
-        user_matrix = input("enter matrix with student info in each list containing [First Name, Last Name, ID, Job Title, Company] :")
+        user_matrix = input("enter matrix with student info in each list containing [First Name, Last Name, ID, Job Title, Company] :") #or use m = [["firstname1", "lastname1", "ID1", "jobtitle1", "company1"], ["firstname2","lastname2", "ID2", "jobtitle2", "company2"], ["firstname3", "lastname3", "ID3","jobtitle3", "company3"]]
         print(convertMatrixtoDict(user_matrix))
+      elif choice == 5:
+        str = input("enter a string s :")
+        print(checkPalindrome(str))
+      elif choice == 6:
+         
