@@ -5,6 +5,9 @@ def openTab(title, url):
    tab = {}
    tab[url]=[title]
    return tab
+
+def closeTab(lst,index):
+   lst.remove(lst[index])
    
 
 def main():
@@ -12,11 +15,18 @@ def main():
    choice = 0
    open_tabs = []
    while choice != 9:
-      displayMenu()
-      choice = int(input("enter your choice :"))
-      if choice == 1:
+    displayMenu()
+    choice = int(input("enter your choice :"))
+    if choice == 1:
         title = input("enter title of the website :")
         url = input("enter URL of the website :")
         open_tabs.append(openTab(title,url))
+    if choice == 2:
+        i = int(input("enter the index of the tab you wish to close :"))
+        if i == None:
+           closeTab(open_tabs,len(open_tabs)-1)
+        else:
+           closeTab(open_tabs,i) 
+
 main()
 
