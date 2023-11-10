@@ -22,10 +22,11 @@ def main():
         url = input("enter URL of the website :")
         open_tabs.append(openTab(title,url))
     if choice == 2:
-        i = int(input("enter the index of the tab you wish to close :"))
-        if i == None:
+        i = input("enter the index of the tab you wish to close :")
+        if i == "":
            closeTab(open_tabs,len(open_tabs)-1)
         else:
+           i = int(i)
            closeTab(open_tabs,i) 
 
 main()
