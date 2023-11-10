@@ -8,7 +8,7 @@ def openTab(title, url):
    
 
 def main():
-   print("Greetins !")
+   print("Greetings !")
    choice = 0
    open_tabs = []
    while choice != 9:
@@ -18,4 +18,5 @@ def main():
         title = input("enter title of the website :")
         url = input("enter URL of the website :")
         open_tabs.append(openTab(title,url))
+main()
 
