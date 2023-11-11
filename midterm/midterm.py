@@ -18,6 +18,8 @@ def switchTab(url): #code from https://www.geeksforgeeks.org/python-web-scraping
    return soup.prettify()
    
 
+   
+
 def main():
    print("Greetings !")
    choice = 0
@@ -49,5 +51,10 @@ def main():
             for url in tab:
                u = url
             print(switchTab(u))
+      elif choice == 4:
+         for tab in open_tabs:
+            for url,title in tab.items():
+               print(title)
+
 main()
 
