@@ -17,6 +17,7 @@ def switchTab(url): #code from https://www.geeksforgeeks.org/python-web-scraping
    soup = BeautifulSoup(r.content, 'html.parser') 
    return soup.prettify()
    
+def openNestedTab(parent_tab):
 
    
 
@@ -58,6 +59,13 @@ def main():
                #display nested tabs
       elif choice == 5:
          x = int(input("enter index of the parent tab"))
+         parent_tab = open_tabs[x]
+         #add nested tabs 
+      elif choice == 6:
+         open_tabs=[]
+      
+      
+
 
 main()
 
