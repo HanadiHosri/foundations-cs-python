@@ -1,3 +1,5 @@
+import requests
+
 def displayMenu():
    print("1. Open Tab\n" + "2. Close Tab\n" + "3. Switch Tab\n" + "4. Display All Tabs\n" +"5. Open Nested Tab\n" + "6. Clear All Tabs\n"+ "7. Save Tabs\n" + "8. Import Tabs\n" + "9. Exit")
 
@@ -8,7 +10,10 @@ def openTab(title, url):
 
 def closeTab(lst,index):
    lst.remove(lst[index])
-   
+
+def switchTab(url):
+   response = requests.get(url)
+   return response.text
 
 def main():
    print("Greetings !")
@@ -28,6 +33,6 @@ def main():
         else:
            i = int(i)
            closeTab(open_tabs,i) 
-
+      
 main()
 
