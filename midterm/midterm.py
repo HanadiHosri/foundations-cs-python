@@ -55,6 +55,9 @@ def main():
          for tab in open_tabs:
             for url,title in tab.items():
                print(title)
+               #display nested tabs
+      elif choice == 5:
+         x = int(input("enter index of the parent tab"))
 
 main()
 
