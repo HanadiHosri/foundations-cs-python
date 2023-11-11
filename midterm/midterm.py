@@ -12,7 +12,7 @@ def openTab(title, url):
 def closeTab(lst,index):
    lst.remove(lst[index])
 
-def switchTab(url):
+def switchTab(url): #code from https://www.geeksforgeeks.org/python-web-scraping-tutorial/
    r = requests.get(url)
    soup = BeautifulSoup(r.content, 'html.parser') 
    return soup.prettify()
@@ -38,9 +38,16 @@ def main():
             closeTab(open_tabs,i) 
       elif choice == 3:
          i = input("enter the index of the tab to display its content :")
-         tab = open_tabs[i]
-         for url in tab:
-            u = url
-         print(switchTab(u))
+         if i =="":
+            tab = open_tabs[len(open_tabs)-1]
+            for url in tab:
+               u = url
+            print(switchTab(u))
+         else :
+            i = int(i)
+            tab = open_tabs[i]
+            for url in tab:
+               u = url
+            print(switchTab(u))
 main()
 
