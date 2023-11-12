@@ -43,12 +43,13 @@ def saveTAbs(tabs,file_path): #code from https://www.w3schools.com/python/python
    f = open(file_path, "a") #code from https://www.w3schools.com/python/ref_file_write.asp
    f.write(y)
    f.close
-   f = open(file_path,"r")
-   return f.read()
 
-def importTabs(file_path): #code from https://www.w3schools.com/python/ref_file_read.asp
-   f = open(file_path,"r")
-   return f.read()   
+def importTabs(file_path): #code from https://www.w3schools.com/python/ref_file_read.asp & https://www.geeksforgeeks.org/read-json-file-using-python/
+   f = open(file_path)
+   data = json.load(f)
+   f.close()
+   return data
+   
 
 def main():
    print("Greetings !")
@@ -94,10 +95,10 @@ def main():
       elif choice == 6:
          open_tabs=[]
       elif choice == 7:
-         file_path = input("enter a file path to save the current state of open tabs")
+         file_path = input("enter a file path to save the current state of open tabs :")
          saveTAbs(open_tabs,file_path)
       elif choice == 8:
-         file_path = input("enter a file path to save the current state of open tabs")
+         file_path = input("enter a file path to load tabs from the specified file :")
          open_tabs = importTabs(file_path)
       elif choice != 9:
          print("invalid input")
