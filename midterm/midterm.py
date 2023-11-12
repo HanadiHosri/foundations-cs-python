@@ -45,7 +45,10 @@ def saveTAbs(tabs,file_path): #code from https://www.w3schools.com/python/python
    f.close
    f = open(file_path,"r")
    return f.read()
-   
+
+def importTabs(file_path): #code from https://www.w3schools.com/python/ref_file_read.asp
+   f = open(file_path,"r")
+   return f.read()   
 
 def main():
    print("Greetings !")
@@ -93,6 +96,9 @@ def main():
       elif choice == 7:
          file_path = input("enter a file path to save the current state of open tabs")
          saveTAbs(open_tabs,file_path)
+      elif choice == 8:
+         file_path = input("enter a file path to save the current state of open tabs")
+         importTabs(file_path)
       
 
 
