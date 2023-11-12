@@ -38,9 +38,14 @@ def openNestedTab(parent_tab):
    parent_tab[url] = [title]
    return parent_tab
 
-def saveTAbs(tabs): #code from https://www.w3schools.com/python/python_json.asp
+def saveTAbs(tabs,file_path): #code from https://www.w3schools.com/python/python_json.asp
    y = json.dumps(tabs)
-   return y 
+   f = open(file_path, "a")
+   f.write(y)
+   f.close
+   f = open(file_path,"r")
+   return f.read()
+   
 
 def main():
    print("Greetings !")
