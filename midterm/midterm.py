@@ -61,7 +61,7 @@ def main():
       if choice == 1:
          title = input("enter title of the website :")
          url = input("enter URL of the website :")
-         open_tabs.append(openTab(title,url))
+         open_tabs.append(openTab(title,url)) #add the tab to a list of open tabs
       elif choice == 2:
          i = input("enter the index of the tab you wish to close :")
          if i == "":
