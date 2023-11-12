@@ -32,7 +32,7 @@ def printNestedTabs(tab): #O(N), N being the number of keys in tab(the parent ta
          print("\t", end = " ")
          print(tab[i])
 
-def openNestedTab(parent_tab):
+def openNestedTab(parent_tab): #O(1)
    url = input("enter url for this nested tab :")
    title = input("enter title for this nested tab :")
    parent_tab[url] = [title]
