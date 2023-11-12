@@ -28,14 +28,13 @@ def printNestedTabs(tab):
          print(tab[i])
          is_parent_tab = False
       else :
-         print("/t", end = " ")
+         print("\t", end = " ")
          print(tab[i])
-
 
 def openNestedTab(parent_tab):
    url = input("enter url for this nested tab :")
    title = input("enter title for this nested tab :")
-   parent_tab[url] = title
+   parent_tab[url] = [title]
    return parent_tab
 
 
