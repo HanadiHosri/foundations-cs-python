@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 def displayMenu():
    print("1. Open Tab\n" + "2. Close Tab\n" + "3. Switch Tab\n" + "4. Display All Tabs\n" +"5. Open Nested Tab\n" + "6. Clear All Tabs\n"+ "7. Save Tabs\n" + "8. Import Tabs\n" + "9. Exit")
@@ -37,7 +38,8 @@ def openNestedTab(parent_tab):
    parent_tab[url] = [title]
    return parent_tab
 
-
+def saveTAbs(tabs):
+   y = json.dumps(tabs)
    
 
 def main():
@@ -77,7 +79,6 @@ def main():
                printNestedTabs(tab)
             else:
                printTabs(tab)
-               
       elif choice == 5:
          x = int(input("enter index of the parent tab :"))
          parent_tab = open_tabs[x]
