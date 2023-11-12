@@ -18,11 +18,11 @@ def switchTab(url): #code from https://www.geeksforgeeks.org/python-web-scraping
    soup = BeautifulSoup(r.content, 'html.parser') 
    return soup.prettify()
 
-def printTabs(tab):
+def printTabs(tab): #O(N), N being the number of keys  in tab
    for i in tab:
       print(tab[i])
 
-def printNestedTabs(tab):
+def printNestedTabs(tab): #O(N), N being the number of keys in tab(the parent tab)
    is_parent_tab = True #since the first key is associated with the parent tab
    for i in tab:
       if is_parent_tab:
