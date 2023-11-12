@@ -98,7 +98,10 @@ def main():
          saveTAbs(open_tabs,file_path)
       elif choice == 8:
          file_path = input("enter a file path to save the current state of open tabs")
-         importTabs(file_path)
+         open_tabs = importTabs(file_path)
+      elif choice != 9:
+         print("invalid input")
+   print("goodbye !")
       
 
 
