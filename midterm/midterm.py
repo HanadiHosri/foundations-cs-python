@@ -40,7 +40,7 @@ def openNestedTab(parent_tab):
 
 def saveTAbs(tabs,file_path): #code from https://www.w3schools.com/python/python_json.asp
    y = json.dumps(tabs)
-   f = open(file_path, "a")
+   f = open(file_path, "a") #code from https://www.w3schools.com/python/ref_file_write.asp
    f.write(y)
    f.close
    f = open(file_path,"r")
@@ -90,7 +90,9 @@ def main():
          open_tabs[x] = openNestedTab(parent_tab)
       elif choice == 6:
          open_tabs=[]
-      
+      elif choice == 7:
+         file_path = input("enter a file path to save the current state of open tabs")
+         saveTAbs(open_tabs,file_path)
       
 
 
