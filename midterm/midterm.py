@@ -22,11 +22,11 @@ def printTabs(tab):
       print(tab[i])
 
 def printNestedTabs(tab):
-   is_parent_tab = True
+   is_parent_tab = True #since the first key is associated with the parent tab
    for i in tab:
       if is_parent_tab:
          print(tab[i])
-         is_parent_tab = False
+         is_parent_tab = False #since all other keys belong to the children/nested tabs
       else :
          print("\t", end = " ")
          print(tab[i])
