@@ -25,7 +25,12 @@ class LinkedList:
                 temp = temp.next
             temp.next = new_node
             new_node.next = None
-           
+    
+    def displayNodes(self):
+        current = self.head
+        while current != None:
+            print(current.info , end=" ")
+            current = current.next
 
 
 
@@ -37,8 +42,14 @@ def main():
     displayMenu()
     choice = int(input("enter your choice :"))
     if choice == 1:
-       displayMenu1()
-       choice1 = input("enter your choice :")
-       if choice1 == "a":
+        displayMenu1()
+        choice1 = input("enter your choice :")
+        ll = LinkedList()
+        if choice1 == "a":
             n = eval(input("enter a numerical value n to add to the linked list :"))
-            addNode(n)
+            ll.addNode(n)
+        if choice1 == "b":
+            ll.displayNodes()
+
+
+main()
