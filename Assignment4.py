@@ -29,9 +29,9 @@ class LinkedList:
     def displayNodes(self):
         current = self.head
         while current != None:
-            print(current.info , end=" ")
+            print(current.info , end=" -> ")
             current = current.next
-
+        print()
 
 
 def main():
