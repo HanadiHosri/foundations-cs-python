@@ -16,13 +16,16 @@ class LinkedList:
     
     def addNode(self,value):
         new_node = Node(value)
-        if self.head == None:
+        if self.head == None: #if the list is empty, simply make the new_node the head
             self.head = new_node
+            return
         else:
-            self.next = new_node
+            temp = self.head
+            while (temp.next != None): #we do this to reach the last element(which is pointing to None)
+                temp = temp.next
+            temp.next = new_node
             new_node.next = None
            
-          
 
 
 
