@@ -15,10 +15,12 @@ class LinkedList:
        self.head = None
     
     def addNode(self,value):
+        new_node = Node(value)
         if self.head == None:
-            self.head = Node(value)
+            self.head = new_node
         else:
-            
+            self.next = new_node
+            new_node.next = None
            
           
 
@@ -35,5 +37,5 @@ def main():
        displayMenu1()
        choice1 = input("enter your choice :")
        if choice1 == "a":
-          n = int(input("enter a value n to add to the linked list :"))
-          addNode(n)
+            n = eval(input("enter a numerical value n to add to the linked list :"))
+            addNode(n)
