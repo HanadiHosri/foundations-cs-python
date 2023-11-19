@@ -29,16 +29,18 @@ class LinkedList:
         while current != None:
             print(current.info , end=" -> ")
             current = current.next
-        print()
+        print("None")
 
     def removeNode(self, value):
         current = self.head
         while current != None:
             if current == Node(value):
+                pass
 
 
 
 def main():
+  ll = LinkedList()
   name = input("enter your name :")
   print("Hello, Welcome!!", name)
   choice = 0
@@ -46,17 +48,20 @@ def main():
     displayMenu()
     choice = int(input("enter your choice :"))
     if choice == 1:
-        displayMenu1()
-        choice1 = input("enter your choice :")
-        ll = LinkedList()
-        if choice1 == "a":
-            n = eval(input("enter a numerical value n to add to the linked list :"))
-            new_node = Node(n)
-            ll.addNode(new_node)
-        elif choice1 == "b":
-            ll.displayNodes()
-        elif choice1 == "c":
-            n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
+        choice1 = ""
+        while choice1 != "d":
+            displayMenu1()
+            choice1 = input("enter your choice :")
+        
+            if choice1 == "a":
+                n = eval(input("enter a numerical value n to add to the linked list :"))
+                new_node = Node(n)
+                ll.addNode(new_node)
+            elif choice1 == "b":
+                ll.displayNodes()
+            elif choice1 == "c":
+                n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
+
 
 
 
