@@ -14,17 +14,16 @@ class LinkedList:
     def __init__(self):
        self.head = None
     
-    def addNode(self,value):
-        new_node = Node(value)
-        if self.head == None: #if the list is empty, simply make the new_node the head
-            self.head = new_node
+    def addNode(self,node):
+        if self.head == None: #if the list is empty, simply make the new node the head
+            self.head = node
             return
         else:
             temp = self.head
             while (temp.next != None): #we do this to reach the last element(which is pointing to None)
                 temp = temp.next
-            temp.next = new_node
-            new_node.next = None
+            temp.next = node
+            node.next = None
     
     def displayNodes(self):
         current = self.head
@@ -47,7 +46,8 @@ def main():
         ll = LinkedList()
         if choice1 == "a":
             n = eval(input("enter a numerical value n to add to the linked list :"))
-            ll.addNode(n)
+            new_node = Node(n)
+            ll.addNode(new_node)
         if choice1 == "b":
             ll.displayNodes()
 
