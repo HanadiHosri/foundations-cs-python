@@ -5,6 +5,22 @@ def displayMenu():
 def displayMenu1():
     print("a. Add Node\n" + "b. Display Nodes\n" + "c. Search for & Delete Node\n" + "d. Return to main menu")
 
+class Node:
+    def __init__(self, info):
+       self.info = info
+       self.next = None
+
+class LinkedList:
+    def __init__(self):
+       self.head = None
+    
+    def addNode(self,value):
+        if self.head == None:
+            self.head = Node(value)
+        else:
+            
+           
+          
 
 
 
@@ -19,4 +35,5 @@ def main():
        displayMenu1()
        choice1 = input("enter your choice :")
        if choice1 == "a":
-          
+          n = int(input("enter a value n to add to the linked list :"))
+          addNode(n)
