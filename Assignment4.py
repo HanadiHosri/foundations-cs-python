@@ -17,10 +17,9 @@ class LinkedList:
     def addNode(self,node):
         if self.head == None: #if the list is empty, simply make the new node the head
             self.head = node
-            return
         else:
             temp = self.head
-            while (temp.next != None): #we do this to reach the last element(which is pointing to None)
+            while temp.next != None: #we do this to reach the last element(which is pointing to None)
                 temp = temp.next
             temp.next = node
             node.next = None
@@ -31,6 +30,12 @@ class LinkedList:
             print(current.info , end=" -> ")
             current = current.next
         print()
+
+    def removeNode(self, value):
+        current = self.head
+        while current != None:
+            if current == Node(value):
+
 
 
 def main():
@@ -48,8 +53,11 @@ def main():
             n = eval(input("enter a numerical value n to add to the linked list :"))
             new_node = Node(n)
             ll.addNode(new_node)
-        if choice1 == "b":
+        elif choice1 == "b":
             ll.displayNodes()
+        elif choice1 == "c":
+            n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
+
 
 
 main()
