@@ -33,10 +33,16 @@ class LinkedList:
 
     def removeNode(self, value):
         current = self.head
-        while current != None:
-            if current == Node(value):
-                pass
-
+        if current == None:
+            print("your list is empty, cant delete from an empty linked list")
+        elif current == Node(value): #if the first node is the one to be removed
+            self.head = current.next
+            current.next = None
+        else:
+            while current.next != None:
+                if current == Node(value):
+                    
+                current = current.next
 
 
 def main():
@@ -52,7 +58,6 @@ def main():
         while choice1 != "d":
             displayMenu1()
             choice1 = input("enter your choice :")
-        
             if choice1 == "a":
                 n = eval(input("enter a numerical value n to add to the linked list :"))
                 new_node = Node(n)
