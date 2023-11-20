@@ -35,15 +35,17 @@ class LinkedList:
         current = self.head
         if current == None:
             print("your list is empty, cant delete from an empty linked list")
-        elif current == Node(value): #if the first node is the one to be removed
+        elif current.info == value: #if the first node is the one to be removed
             self.head = current.next
             current.next = None
         else:
-            while current.next != None:
-                if current.next == Node(value):
-                    temp = current.next
-                    current.next = temp.next
-                    temp.next = None
+            prev = current #we set previous to be the head, and current to be the next of head (the second element)
+            current = current.next
+            while current != None:
+                if current.info == value:
+                    prev.next = current.next #we are unlinking the node from the linked list by setting the next of its previous node to the next of this node
+                else:
+                    prev = current
                 current = current.next
 
 
