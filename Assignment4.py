@@ -40,8 +40,10 @@ class LinkedList:
             current.next = None
         else:
             while current.next != None:
-                if current == Node(value):
-                    
+                if current.next == Node(value):
+                    temp = current.next
+                    current.next = temp.next
+                    temp.next = None
                 current = current.next
 
 
@@ -66,7 +68,7 @@ def main():
                 ll.displayNodes()
             elif choice1 == "c":
                 n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
-
+                ll.removeNode(n)
 
 
 
