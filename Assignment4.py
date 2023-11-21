@@ -69,22 +69,22 @@ class Student:
         self.midterm_grade = midterm_grade
         self.final_grade = final_grade
         self.good_attitude = good_attitude
-
+        
 class PriorityQueue:
     def __init__(self):
         self.head = None
         self.size = 0
+        
     def displayNodes(self):
         current = self.head
         while current != None:
-            print(current.info)
+            print(current.info.name)
             current = current.next
     def enqueue(self, student):
         node = Node(student)
         if self.size == 0:
             self.head = node
             self.size += 1
-
 
 
 def main():
