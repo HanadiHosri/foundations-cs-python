@@ -48,6 +48,17 @@ class LinkedList:
                     prev = current
                 current = current.next
 
+def checkPalindrome(str):
+    s = list(str)
+    queue = []
+    stack = []
+    for x in s:
+        queue.append(x)
+        stack.append(x)
+    for i in 
+        if queue.pop(0) == stack.pop(len(stack))
+    
+
 
 def main():
   ll = LinkedList()
@@ -71,7 +82,8 @@ def main():
             elif choice1 == "c":
                 n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
                 ll.removeNode(n)
-
-
+    if choice == 2:
+        str = input("enter a string to check if it is a palindrome :")
+        checkPalindrome(str)
 
 main()
