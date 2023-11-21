@@ -55,9 +55,10 @@ def checkPalindrome(str):
     for x in s:
         queue.append(x)
         stack.append(x)
-    for i in 
-        if queue.pop(0) == stack.pop(len(stack))
-    
+    while queue != [] and stack != []:
+        if queue.pop(0) != stack.pop(): #dequeue in a list is the same as popping the first element
+            return "the string is not a palindrome"
+    return "the string is a palindrome"
 
 
 def main():
@@ -82,8 +83,8 @@ def main():
             elif choice1 == "c":
                 n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
                 ll.removeNode(n)
-    if choice == 2:
+    elif choice == 2:
         str = input("enter a string to check if it is a palindrome :")
-        checkPalindrome(str)
+        print(checkPalindrome(str))
 
 main()
