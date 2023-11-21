@@ -71,13 +71,25 @@ class Student:
         self.good_attitude = good_attitude
 
 class PriorityQueue:
-    
-
+    def __init__(self):
+        self.head = None
+        self.size = 0
+    def displayNodes(self):
+        current = self.head
+        while current != None:
+            print(current.info)
+            current = current.next
+    def enqueue(self, student):
+        node = Node(student)
+        if self.size == 0:
+            self.head = node
+            self.size += 1
 
 
 
 def main():
   ll = LinkedList()
+  pq = PriorityQueue()
   name = input("enter your name :")
   print("Hello, Welcome!!", name)
   choice = 0
@@ -103,7 +115,7 @@ def main():
         print(checkPalindrome(str))
     elif choice == 3: 
         choice3 = ""
-        while choice1 != "c":
+        while choice3 != "c":
             displayMenu3()
             choice3 = input("enter your choice :")
             if choice3 == "a":
@@ -113,6 +125,8 @@ def main():
                 attitude = input("enter True if the student has good attitude and False if they dont :")
                 good_attitude = bool(attitude)
                 student = Student(name,midterm_grade,final_grade,good_attitude)
+                pq.enqueue(student)
+                pq.displayNodes()
 
 
 
