@@ -94,7 +94,14 @@ def main():
         while choice1 != "c":
             displayMenu3()
             choice3 = input("enter your choice :")
-            if choice3 == "a"
+            if choice3 == "a":
+                name = input("enter a student name :")
+                midterm_grade = int(input("enter their midterm grade :"))
+                final_grade = int(input("enter their final grade :"))
+                attitude = input("enter True if the student has good attitude and False if they dont :")
+                good_attitude = bool(attitude)
+                
+
 
 
 main()
