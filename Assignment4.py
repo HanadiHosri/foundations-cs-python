@@ -5,6 +5,9 @@ def displayMenu():
 def displayMenu1():
     print("a. Add Node\n" + "b. Display Nodes\n" + "c. Search for & Delete Node\n" + "d. Return to main menu")
 
+def displayMenu3():
+    print("a. Add a student\n" + "b. Interview a student\n" + "c. Return to main menu")
+
 class Node:
     def __init__(self, info):
        self.info = info
@@ -86,5 +89,12 @@ def main():
     elif choice == 2:
         str = input("enter a string to check if it is a palindrome :")
         print(checkPalindrome(str))
+    elif choice == 3: 
+        choice3 = ""
+        while choice1 != "c":
+            displayMenu3()
+            choice3 = input("enter your choice :")
+            if choice3 == "a"
+
 
 main()
