@@ -63,6 +63,18 @@ def checkPalindrome(str):
             return "the string is not a palindrome"
     return "the string is a palindrome"
 
+class Student:
+    def __init__(self, name, midterm_grade, final_grade, good_attitude):
+        self.name = name
+        self.midterm_grade = midterm_grade
+        self.final_grade = final_grade
+        self.good_attitude = good_attitude
+
+class PriorityQueue:
+    
+
+
+
 
 def main():
   ll = LinkedList()
@@ -100,7 +112,8 @@ def main():
                 final_grade = int(input("enter their final grade :"))
                 attitude = input("enter True if the student has good attitude and False if they dont :")
                 good_attitude = bool(attitude)
-                
+                student = Student(name,midterm_grade,final_grade,good_attitude)
+
 
 
 
