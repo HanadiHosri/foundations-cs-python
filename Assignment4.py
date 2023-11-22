@@ -85,7 +85,22 @@ class PriorityQueue:
         if self.size == 0:
             self.head = node
             self.size += 1
-
+        else :
+            if node.info.good_attitude == True:
+                if node.info.final_grade > self.head.info.final_grade:
+                    if node.info.midterm_grade > self.head.info.midterm_grade:
+                        node.next = self.head
+                        self.head = node
+                        self.size += 1
+            else:
+                current = self.head
+                previous = current
+                while current != None and current.info.midterm_grade > node.info.midterm_grade:
+                    previous =  current
+                    current = current.next
+                previous.next = node
+                node.next = current
+                self.size += 1
 
 def main():
   ll = LinkedList()
@@ -126,7 +141,7 @@ def main():
                 good_attitude = bool(attitude)
                 student = Student(name,midterm_grade,final_grade,good_attitude)
                 pq.enqueue(student)
-                pq.displayNodes()
+                pq.displayNodes() #remove this 
 
 
 
