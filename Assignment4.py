@@ -126,12 +126,15 @@ class PriorityQueue:
                 self.size += 1
 
     def dequeue(self):
+        head = self.head
         if self.size == 0:
             print("Your Queue is Empty! Enqueue first.")
         elif self.size == 1:
+            print("you need to interview :" , head.info.name)
             self.head = None
             self.size -= 1
         else:
+            print("you need to interview :" , head.info.name)
             current = self.head
             self.head = self.head.next
             current.next = None
@@ -178,8 +181,6 @@ def main():
                 pq.enqueue(student)
                 pq.displayNodes() #remove this 
             elif choice3 == "b":
-                print("you need to interview :")
-                pq.displayFirstNode()
                 pq.dequeue()
                 pq.displayNodes() #remove this
 
