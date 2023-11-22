@@ -80,6 +80,11 @@ class PriorityQueue:
         while current != None:
             print(current.info.name)
             current = current.next
+
+    def displayFirstNode(self):
+        head = self.head
+        print(head.info.name)
+
     def enqueue(self, student):
         node = Node(student)
         if self.size == 0:
@@ -119,6 +124,20 @@ class PriorityQueue:
                 previous.next = node
                 node.next = current
                 self.size += 1
+
+    def dequeue(self):
+        if self.size == 0:
+            print("Your Queue is Empty! Enqueue first.")
+        elif self.size == 1:
+            print("We are removing:", self.head.info)
+            self.head = None
+            self.size -= 1
+        else:
+            print("We are removing:", self.head.info)
+            current = self.head
+            self.head = self.head.next
+            current.next = None
+            self.size -= 1
 
 def main():
   ll = LinkedList()
@@ -160,6 +179,8 @@ def main():
                 student = Student(name,midterm_grade,final_grade,good_attitude)
                 pq.enqueue(student)
                 pq.displayNodes() #remove this 
+            elif choice3 == "b":
+                pq.displayFirstNode()
 
 
 
