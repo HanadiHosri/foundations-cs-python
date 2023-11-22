@@ -113,7 +113,7 @@ class PriorityQueue:
             else:
                 current = self.head
                 previous = current
-                while current != None and node.info.good_attitude == True:
+                while current != None:
                     previous =  current
                     current = current.next
                 previous.next = node
