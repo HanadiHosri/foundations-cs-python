@@ -87,7 +87,9 @@ class PriorityQueue:
             self.head = node
             self.size += 1
         else :
+            print("if size is not 0")
             if node.info.good_attitude == True:
+                print("if good attitude = True")
                 if node.info.final_grade >= self.head.info.final_grade:
                     if node.info.midterm_grade >= self.head.info.midterm_grade:
                         node.next = self.head
@@ -112,6 +114,7 @@ class PriorityQueue:
                     node.next = current
                     self.size += 1
             else:
+                print("if good attitude = False")
                 current = self.head
                 previous = current
                 while current != None:
@@ -172,7 +175,10 @@ def main():
                 midterm_grade = int(input("enter their midterm grade :"))
                 final_grade = int(input("enter their final grade :"))
                 attitude = input("enter True if the student has good attitude and False if they dont :")
-                good_attitude = bool(attitude)
+                if attitude == "True":
+                    good_attitude = True
+                if attitude == "False":
+                    good_attitude = False
                 student = Student(name,midterm_grade,final_grade,good_attitude)
                 pq.enqueue(student)
                 pq.displayNodes() #remove this 
