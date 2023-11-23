@@ -81,10 +81,6 @@ class PriorityQueue:
             print(current.info.name)
             current = current.next
 
-    def displayFirstNode(self):
-        head = self.head
-        print(head.info.name)
-
     def enqueue(self, student):
         node = Node(student)
         if self.size == 0:
