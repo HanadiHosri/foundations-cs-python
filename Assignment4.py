@@ -197,6 +197,25 @@ def evaluateInfix(expression):
 
     return numbers_stack[0]
 
+class Graph:
+    def __init__(self):
+        self.adj_list = {}
+    
+    def addVertex(self,vertex):
+        if vertex not in self.adj_list:
+            self.adj_list[vertex] = LinkedList()
+            return
+        print("vertex" , vertex, "already exists!\n")
+
+    def displayGraph(self):
+        if self.adj_list == {}:
+            print("graph is empty!")
+            return
+        for vertex in self.adj_list:
+            print(vertex + ":", end=" ")
+            self.adj_list[vertex].displayNodes()
+
+
 def main():
   ll = LinkedList()
   pq = PriorityQueue()
@@ -252,6 +271,9 @@ def main():
             displayMenu5()
             choice5 = input("enter your choice :")
             if choice5 == "a":
+                vertex = int(input("enter value for new vertex to add to the graph :"))
+                graph =Graph()
+                graph.addVertex(vertex)
 
 
 
