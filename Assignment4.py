@@ -198,28 +198,29 @@ def evaluateInfix(expression):
     return numbers_stack[0]
 
 class Graph:
-    def __init__(self):
-        self.adj_list = {}
-    
-    def addVertex(self,vertex):
-        if vertex not in self.adj_list:
-            self.adj_list[vertex] = LinkedList()
-            return
-        print("vertex" , vertex, "already exists!\n")
+    def __init__(self,num_vertices):
+        self.num_vertices = num_vertices
+        self.adj_matrix = [[0] * num_vertices for _ in range(num_vertices)]
+
+    def addVertex(self):
+        self.num_vertices += 1
+        for row in self.adj_matrix:
+            row.append(0)
+        self.adj_matrix.append([0] * self.num_vertices)
 
     def displayGraph(self):
-        if self.adj_list == {}:
-            print("graph is empty!")
+        if len(self.adj_matrix) == 0:
+            print("Graph is empty!")
             return
-        for vertex in self.adj_list:
-            print(vertex , ":", end=" ")
-            self.adj_list[vertex].displayNodes()
+        for row in self.adj_matrix:
+            print(" ".join(map(str, row)))
+        
 
 
 def main():
   ll = LinkedList()
   pq = PriorityQueue()
-  graph =Graph()
+  graph =Graph(0)
   name = input("enter your name :")
   print("Hello, Welcome!!", name)
   choice = 0
@@ -272,8 +273,7 @@ def main():
             displayMenu5()
             choice5 = input("enter your choice :")
             if choice5 == "a":
-                vertex = int(input("enter value for new vertex to add to the graph :"))
-                graph.addVertex(vertex)
+                graph.addVertex()
                 graph.displayGraph()
 
 
