@@ -8,6 +8,9 @@ def displayMenu1():
 def displayMenu3():
     print("a. Add a student\n" + "b. Interview a student\n" + "c. Return to main menu")
 
+def displayMenu5():
+    print("a. Add vertex\n" + "b. Add edge\n" + "c. Remove vertex\n" + "d. Remove edge\n" + "e. Display vertices witha degree of X or more\n" + "f. Return to main menu")
+
 class Node:
     def __init__(self, info):
        self.info = info
@@ -243,7 +246,12 @@ def main():
     elif choice == 4:
         infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
         print("the result is ", evaluateInfix(infix_expression))
-
+    elif choice == 5:
+        choice5 = ""
+        while choice5 != "f":
+            displayMenu5()
+            choice5 = input("enter your choice :")
+            if choice5 == "a":
 
 
 
