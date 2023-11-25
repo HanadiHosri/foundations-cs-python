@@ -212,13 +212,14 @@ class Graph:
             print("graph is empty!")
             return
         for vertex in self.adj_list:
-            print(vertex + ":", end=" ")
+            print(vertex , ":", end=" ")
             self.adj_list[vertex].displayNodes()
 
 
 def main():
   ll = LinkedList()
   pq = PriorityQueue()
+  graph =Graph()
   name = input("enter your name :")
   print("Hello, Welcome!!", name)
   choice = 0
@@ -272,8 +273,8 @@ def main():
             choice5 = input("enter your choice :")
             if choice5 == "a":
                 vertex = int(input("enter value for new vertex to add to the graph :"))
-                graph =Graph()
                 graph.addVertex(vertex)
+                graph.displayGraph()
 
 
 
