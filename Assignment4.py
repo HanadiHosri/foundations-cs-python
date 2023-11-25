@@ -136,6 +136,64 @@ class PriorityQueue:
             current.next = None
             self.size -= 1
 
+# Function to check precedence of operators #code from chatgpt
+def precedence(operator):
+    if operator == '+' or operator == '-':
+        return 1
+    elif operator == '*' or operator == '/':
+        return 2
+    else:
+        return 0
+
+# Function to perform arithmetic operations
+def applyOperator(operand1, operand2, operator):
+    if operator == '+':
+        return operand1 + operand2
+    elif operator == '-':
+        return operand1 - operand2
+    elif operator == '*':
+        return operand1 * operand2
+    elif operator == '/':
+        if operand2 == 0:
+            raise ValueError("Division by zero")
+        return operand1 / operand2
+
+# Function to evaluate the infix expression using stacks
+def evaluateInfix(expression):
+    numbers_stack = []
+    operators_stack = []
+
+    for char in expression:
+        if char.isdigit():
+            numbers_stack.append(int(char))
+        elif char == '(':
+            operators_stack.append(char)
+        elif char == ')':
+            while operators_stack[-1] != '(':
+                operator = operators_stack.pop()
+                operand2 = numbers_stack.pop()
+                operand1 = numbers_stack.pop()
+                result = applyOperator(operand1, operand2, operator)
+                numbers_stack.append(result)
+            operators_stack.pop()  # Discard the '('
+        else:
+            while operators_stack and precedence(operators_stack[-1]) >= precedence(char):
+                operator = operators_stack.pop()
+                operand2 = numbers_stack.pop()
+                operand1 = numbers_stack.pop()
+                result = applyOperator(operand1, operand2, operator)
+                numbers_stack.append(result)
+            operators_stack.append(char)
+    
+    while operators_stack:
+        operator = operators_stack.pop()
+        operand2 = numbers_stack.pop()
+        operand1 = numbers_stack.pop()
+        result = applyOperator(operand1, operand2, operator)
+        numbers_stack.append(result)
+
+    return numbers_stack[0]
+
 def main():
   ll = LinkedList()
   pq = PriorityQueue()
@@ -182,6 +240,9 @@ def main():
             elif choice3 == "b":
                 pq.dequeue()
                 pq.displayNodes() #remove this
+    elif choice == 4:
+        infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
+        print("the result is ", evaluateInfix(infix_expression))
 
 
 
