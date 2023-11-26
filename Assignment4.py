@@ -215,7 +215,16 @@ class Graph:
         for row in self.adj_matrix:
             print(" ".join(map(str, row)))
         
-
+    def addEdge(self,v1,v2):
+        if 0 <= v1 < self.num_vertices and 0 <= v2 <self.num_vertices:
+            self.adj_matrix[v1][v2] = 1
+            self.adj_matrix[v2][v1] = 1
+        elif ((v1 < 0 or v1>= self.num_vertices) and (v2 < 0 or v2 >= self.num_vertices)):
+            print("Invalid vertices", v1, "and", v2, "\n")
+        elif (v1 < 0 or v1 >= self.num_vertices):
+            print("Invalid vertex", v1, "\n")
+        else:
+            print("Invalid vertex", v2, "\n")
 
 def main():
   ll = LinkedList()
@@ -275,7 +284,12 @@ def main():
             if choice5 == "a":
                 graph.addVertex()
                 graph.displayGraph()
-
+            elif choice5 == "b":
+                vertex1 = int(input("enter the number of the first vertex to add an edge between in and the second vertex : ")) -1
+                vertex2 = int(input("enter the number of the the second vertex :")) -1
+                graph.addEdge(vertex1,vertex2)
+                graph.displayGraph()
+            
 
 
 main()
