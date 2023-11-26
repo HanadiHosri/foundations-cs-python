@@ -226,6 +226,26 @@ class Graph:
         else:
             print("Invalid vertex", v2, "\n")
 
+    def removeVertex(self,v):
+        matrix = []
+        matrix1 = []
+        if v < self.num_vertices: #if the vertex does not exist
+            return "there is no vertex number", v
+        else:
+            for i in range(self.num_vertices):
+                self.adj_matrix[v][i] = 0
+                self.adj_matrix[i][v] = 0 #deleting all the edges connected to this vertex
+            for row in self.adj_matrix:
+                if row != self.adj_matrix[v]: #deleting all rows of the vertex
+                    matrix.append(row)
+            for row in matrix:
+                row1 = row[:v] + row[v+1:] #deleting all columns of the vertex
+                matrix1.append(row1)
+            self.adj_matrix = matrix1
+
+
+
+
 def main():
   ll = LinkedList()
   pq = PriorityQueue()
@@ -285,11 +305,15 @@ def main():
                 graph.addVertex()
                 graph.displayGraph()
             elif choice5 == "b":
-                vertex1 = int(input("enter the number of the first vertex to add an edge between in and the second vertex : ")) -1
+                vertex1 = int(input("enter the number of the first vertex to add an edge between it and the second vertex : ")) -1
                 vertex2 = int(input("enter the number of the the second vertex :")) -1
                 graph.addEdge(vertex1,vertex2)
                 graph.displayGraph()
-            
-
+            elif choice == "c":
+                vertex = int(input("enter the number of a vertex to remove it from the graph :")) -1
+                graph.removeVertex(vertex)
+                graph.displayGraph()
+            elif choice =="d":
+                v1 = int(input("enter the number of the first vertex to remove an edge between it and the second vertex : ")) -1
 
 main()
