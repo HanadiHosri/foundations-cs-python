@@ -242,8 +242,10 @@ class Graph:
                 row1 = row[:v] + row[v+1:] #deleting all columns of the vertex
                 matrix1.append(row1)
             self.adj_matrix = matrix1
-
-
+    
+    def removeEdge(self, v1, v2):
+        self.adj_matrix[v1][v2] = 0
+        self.adj_matrix[v2][v1] = 0
 
 
 def main():
@@ -289,10 +291,10 @@ def main():
                     good_attitude = False
                 student = Student(name,midterm_grade,final_grade,good_attitude)
                 pq.enqueue(student)
-                pq.displayNodes() #remove this 
+                pq.displayNodes()
             elif choice3 == "b":
                 pq.dequeue()
-                pq.displayNodes() #remove this
+                pq.displayNodes()
     elif choice == 4:
         infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
         print("the result is ", evaluateInfix(infix_expression))
@@ -309,11 +311,15 @@ def main():
                 vertex2 = int(input("enter the number of the the second vertex :")) -1
                 graph.addEdge(vertex1,vertex2)
                 graph.displayGraph()
-            elif choice == "c":
+            elif choice == "c": #error here
                 vertex = int(input("enter the number of a vertex to remove it from the graph :")) -1
                 graph.removeVertex(vertex)
                 graph.displayGraph()
-            elif choice =="d":
+            elif choice =="d": #error here
                 v1 = int(input("enter the number of the first vertex to remove an edge between it and the second vertex : ")) -1
+                v2 = int(input("enter the number of the the second vertex :")) -1
+                graph.removeEdge(v1,v2)
+                graph.displayGraph()
+
 
 main()
