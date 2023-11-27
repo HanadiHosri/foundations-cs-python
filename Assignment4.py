@@ -272,6 +272,7 @@ def main():
         displayMenu()
         choice = int(input("enter your choice :"))
         if choice == 1:
+            limit = 0
             choice1 = ""
             while choice1 != "d":
                 displayMenu1()
@@ -286,9 +287,11 @@ def main():
                     n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
                     ll.removeNode(n)
         elif choice == 2:
+            limit = 0
             str = input("enter a string to check if it is a palindrome :")
             print(checkPalindrome(str))
         elif choice == 3:
+            limit = 0
             choice3 = ""
             while choice3 != "c":
                 displayMenu3()
@@ -309,9 +312,11 @@ def main():
                     pq.dequeue()
                     pq.displayNodes()
         elif choice == 4:
+            limit = 0
             infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
             print("the result is ", evaluateInfix(infix_expression))
         elif choice == 5:
+            limit = 0
             choice5 = ""
             while choice5 != "f":
                 displayMenu5()
