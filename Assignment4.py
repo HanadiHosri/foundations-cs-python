@@ -248,6 +248,16 @@ class Graph:
         self.adj_matrix[v1][v2] = 0
         self.adj_matrix[v2][v1] = 0
 
+    def displayVerticesDegree(self,degree):
+        v = 0 #to see at which vertex we are
+        for row in self.adj_matrix:
+            v += 1
+            s = 0 #to find the degree of a vertex, we do the sum of the elements in the corresponding row of our AM
+            for i in row:
+                s = s + i
+            if s >= degree:
+                print("vertex", v)
+
 
 def main():
   ll = LinkedList()
@@ -321,6 +331,8 @@ def main():
                 v2 = int(input("enter the number of the the second vertex :")) -1
                 graph.removeEdge(v1,v2)
                 graph.displayGraph()
-
+            elif choice5 =="e":
+                n = int(input("enter a numerical value n to display all vertices with a degree of n or more :"))
+                graph.displayVerticesDegree(n)
 
 main()
