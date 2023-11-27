@@ -78,13 +78,13 @@ class PriorityQueue:
         self.head = None
         self.size = 0
         
-    def displayNodes(self):
+    def displayNodes(self): #O(N), N being the number of nodes in pq
         current = self.head
         while current != None:
             print(current.info.name)
             current = current.next
 
-    def enqueue(self, student):
+    def enqueue(self, student): #O(N), N being the number of nodes in pq
         node = Node(student)
         if self.size == 0:
             self.head = node
@@ -124,7 +124,7 @@ class PriorityQueue:
                 node.next = current
                 self.size += 1
 
-    def dequeue(self):
+    def dequeue(self): #O(1)
         head = self.head
         if self.size == 0:
             print("Your Queue is Empty! Enqueue first.")
@@ -139,7 +139,8 @@ class PriorityQueue:
             current.next = None
             self.size -= 1
 
-# Function to check precedence of operators #code from chatgpt
+# Code from chatgpt
+# Function to check precedence of operators 
 def precedence(operator):
     if operator == '+' or operator == '-':
         return 1
@@ -202,20 +203,20 @@ class Graph:
         self.num_vertices = num_vertices
         self.adj_matrix = [[0] * num_vertices for _ in range(num_vertices)]
 
-    def addVertex(self):
+    def addVertex(self): #O(N), where N is the number of vertices
         self.num_vertices += 1
         for row in self.adj_matrix:
             row.append(0)
         self.adj_matrix.append([0] * self.num_vertices)
 
-    def displayGraph(self):
+    def displayGraph(self): #O(N), where N is the number of vertices
         if len(self.adj_matrix) == 0:
             print("Graph is empty!")
             return
         for row in self.adj_matrix:
             print(" ".join(map(str, row)))
         
-    def addEdge(self,v1,v2):
+    def addEdge(self,v1,v2): #O(1)
         if 0 <= v1 < self.num_vertices and 0 <= v2 <self.num_vertices:
             self.adj_matrix[v1][v2] = 1
             self.adj_matrix[v2][v1] = 1
@@ -226,7 +227,7 @@ class Graph:
         else:
             print("Invalid vertex", v2, "\n")
 
-    def removeVertex(self,v):
+    def removeVertex(self,v): #O(N), where N is the number of vertices
         matrix = []
         matrix1 = []
         if v >= self.num_vertices: #if the vertex does not exist
@@ -244,11 +245,11 @@ class Graph:
             self.adj_matrix = matrix1
             self.num_vertices -= 1
     
-    def removeEdge(self, v1, v2):
+    def removeEdge(self, v1, v2): #O(1)
         self.adj_matrix[v1][v2] = 0
         self.adj_matrix[v2][v1] = 0
 
-    def displayVerticesDegree(self,degree):
+    def displayVerticesDegree(self,degree): #O(N^2) where N  is the number of vertices
         v = 0 #to see at which vertex we are
         for row in self.adj_matrix:
             v += 1
@@ -287,7 +288,7 @@ def main():
         elif choice == 2:
             str = input("enter a string to check if it is a palindrome :")
             print(checkPalindrome(str))
-        elif choice == 3: 
+        elif choice == 3:
             choice3 = ""
             while choice3 != "c":
                 displayMenu3()
