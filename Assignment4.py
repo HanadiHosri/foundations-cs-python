@@ -20,7 +20,7 @@ class LinkedList:
     def __init__(self):
        self.head = None
     
-    def addNode(self,node):
+    def addNode(self,node): #O(N), where N is the number of nodes in the LL
         if self.head == None: #if the list is empty, simply make the new node the head
             self.head = node
         else:
@@ -30,14 +30,14 @@ class LinkedList:
             temp.next = node
             node.next = None
     
-    def displayNodes(self):
+    def displayNodes(self): #O(N), where N is the number of nodes in the LL
         current = self.head
         while current != None:
             print(current.info , end=" -> ")
             current = current.next
         print("None")
 
-    def removeNode(self, value):
+    def removeNode(self, value): #O(N), where N is the number of nodes in the LL
         current = self.head
         if current == None:
             print("your list is empty, cant delete from an empty linked list")
@@ -54,7 +54,7 @@ class LinkedList:
                     prev = current
                 current = current.next
 
-def checkPalindrome(str):
+def checkPalindrome(str): #O(N), where N is the number of characters in str
     s = list(str)
     queue = []
     stack = []
