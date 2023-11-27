@@ -1,23 +1,23 @@
-def displayMenu():
+def displayMenu(): #O(1)
     print("1. Singly Linked List\n" + "2. Check if Palindrome\n" + "3. Priority Queue\n" +
         "4. Evaluate an Infix Expression\n" +"5. Graph\n" + "6. Exit")
     
-def displayMenu1():
+def displayMenu1(): #O(1)
     print("a. Add Node\n" + "b. Display Nodes\n" + "c. Search for & Delete Node\n" + "d. Return to main menu")
 
-def displayMenu3():
+def displayMenu3(): #O(1)
     print("a. Add a student\n" + "b. Interview a student\n" + "c. Return to main menu")
 
-def displayMenu5():
+def displayMenu5(): #O(1)
     print("a. Add vertex\n" + "b. Add edge\n" + "c. Remove vertex\n" + "d. Remove edge\n" + "e. Display vertices witha degree of X or more\n" + "f. Return to main menu")
 
 class Node:
-    def __init__(self, info):
+    def __init__(self, info): #O(1)
        self.info = info
        self.next = None
 
 class LinkedList:
-    def __init__(self):
+    def __init__(self): #O(1)
        self.head = None
     
     def addNode(self,node): #O(N), where N is the number of nodes in the LL
@@ -58,23 +58,23 @@ def checkPalindrome(str): #O(N), where N is the number of characters in str
     s = list(str)
     queue = []
     stack = []
-    for x in s:
-        queue.append(x)
+    for x in s: #O(N), where N is the number of characters in str
+        queue.append(x) #O(1)
         stack.append(x)
     while queue != [] and stack != []:
-        if queue.pop(0) != stack.pop(): #dequeue in a list is the same as popping the first element
+        if queue.pop(0) != stack.pop(): #dequeue in a list is the same as popping the first element, .pop() has O(1)
             return "the string is not a palindrome"
     return "the string is a palindrome"
 
 class Student:
-    def __init__(self, name, midterm_grade, final_grade, good_attitude):
+    def __init__(self, name, midterm_grade, final_grade, good_attitude): #O(1)
         self.name = name
         self.midterm_grade = midterm_grade
         self.final_grade = final_grade
         self.good_attitude = good_attitude
         
 class PriorityQueue:
-    def __init__(self):
+    def __init__(self): #O(1)
         self.head = None
         self.size = 0
         
@@ -141,7 +141,7 @@ class PriorityQueue:
 
 # Code from chatgpt
 # Function to check precedence of operators 
-def precedence(operator):
+def precedence(operator): #O(1)
     if operator == '+' or operator == '-':
         return 1
     elif operator == '*' or operator == '/':
@@ -150,7 +150,7 @@ def precedence(operator):
         return 0
 
 # Function to perform arithmetic operations
-def applyOperator(operand1, operand2, operator):
+def applyOperator(operand1, operand2, operator): #O(1)
     if operator == '+':
         return operand1 + operand2
     elif operator == '-':
@@ -163,7 +163,7 @@ def applyOperator(operand1, operand2, operator):
         return operand1 / operand2
 
 # Function to evaluate the infix expression using stacks
-def evaluateInfix(expression):
+def evaluateInfix(expression): #O(N^2), N being the number of characters in expression
     numbers_stack = []
     operators_stack = []
 
@@ -199,7 +199,7 @@ def evaluateInfix(expression):
     return numbers_stack[0]
 
 class Graph:
-    def __init__(self,num_vertices):
+    def __init__(self,num_vertices): #O(1)
         self.num_vertices = num_vertices
         self.adj_matrix = [[0] * num_vertices for _ in range(num_vertices)]
 
