@@ -260,79 +260,84 @@ class Graph:
 
 
 def main():
-  ll = LinkedList()
-  pq = PriorityQueue()
-  graph =Graph(0)
-  name = input("enter your name :")
-  print("Hello, Welcome!!", name)
-  choice = 0
-  while choice != 7:
-    displayMenu()
-    choice = int(input("enter your choice :"))
-    if choice == 1:
-        choice1 = ""
-        while choice1 != "d":
-            displayMenu1()
-            choice1 = input("enter your choice :")
-            if choice1 == "a":
-                n = eval(input("enter a numerical value n to add to the linked list :"))
-                new_node = Node(n)
-                ll.addNode(new_node)
-            elif choice1 == "b":
-                ll.displayNodes()
-            elif choice1 == "c":
-                n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
-                ll.removeNode(n)
-    elif choice == 2:
-        str = input("enter a string to check if it is a palindrome :")
-        print(checkPalindrome(str))
-    elif choice == 3: 
-        choice3 = ""
-        while choice3 != "c":
-            displayMenu3()
-            choice3 = input("enter your choice :")
-            if choice3 == "a":
-                name = input("enter a student name :")
-                midterm_grade = int(input("enter their midterm grade :"))
-                final_grade = int(input("enter their final grade :"))
-                attitude = input("enter True if the student has good attitude and False if they dont :")
-                if attitude == "True":
-                    good_attitude = True
-                if attitude == "False":
-                    good_attitude = False
-                student = Student(name,midterm_grade,final_grade,good_attitude)
-                pq.enqueue(student)
-                pq.displayNodes()
-            elif choice3 == "b":
-                pq.dequeue()
-                pq.displayNodes()
-    elif choice == 4:
-        infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
-        print("the result is ", evaluateInfix(infix_expression))
-    elif choice == 5:
-        choice5 = ""
-        while choice5 != "f":
-            displayMenu5()
-            choice5 = input("enter your choice :")
-            if choice5 == "a":
-                graph.addVertex()
-                graph.displayGraph()
-            elif choice5 == "b":
-                vertex1 = int(input("enter the number of the first vertex to add an edge between it and the second vertex : ")) -1
-                vertex2 = int(input("enter the number of the the second vertex :")) -1
-                graph.addEdge(vertex1,vertex2)
-                graph.displayGraph()
-            elif choice5 == "c":
-                vertex = int(input("enter the number of a vertex to remove it from the graph :")) -1
-                graph.removeVertex(vertex)
-                graph.displayGraph()
-            elif choice5 =="d":
-                v1 = int(input("enter the number of the first vertex to remove an edge between it and the second vertex : ")) -1
-                v2 = int(input("enter the number of the the second vertex :")) -1
-                graph.removeEdge(v1,v2)
-                graph.displayGraph()
-            elif choice5 =="e":
-                n = int(input("enter a numerical value n to display all vertices with a degree of n or more :"))
-                graph.displayVerticesDegree(n)
-
+    ll = LinkedList()
+    pq = PriorityQueue()
+    graph =Graph(0)
+    name = input("enter your name :")
+    print("Hello, Welcome!!", name)
+    choice = 0
+    limit = 0
+    while choice != 6 and limit < 4:
+        displayMenu()
+        choice = int(input("enter your choice :"))
+        if choice == 1:
+            choice1 = ""
+            while choice1 != "d":
+                displayMenu1()
+                choice1 = input("enter your choice :")
+                if choice1 == "a":
+                    n = eval(input("enter a numerical value n to add to the linked list :"))
+                    new_node = Node(n)
+                    ll.addNode(new_node)
+                elif choice1 == "b":
+                    ll.displayNodes()
+                elif choice1 == "c":
+                    n = eval(input("enter a value to search for in the linked list, then delete all nodes with that value :"))
+                    ll.removeNode(n)
+        elif choice == 2:
+            str = input("enter a string to check if it is a palindrome :")
+            print(checkPalindrome(str))
+        elif choice == 3: 
+            choice3 = ""
+            while choice3 != "c":
+                displayMenu3()
+                choice3 = input("enter your choice :")
+                if choice3 == "a":
+                    name = input("enter a student name :")
+                    midterm_grade = int(input("enter their midterm grade :"))
+                    final_grade = int(input("enter their final grade :"))
+                    attitude = input("enter True if the student has good attitude and False if they dont :")
+                    if attitude == "True":
+                        good_attitude = True
+                    if attitude == "False":
+                        good_attitude = False
+                    student = Student(name,midterm_grade,final_grade,good_attitude)
+                    pq.enqueue(student)
+                    pq.displayNodes()
+                elif choice3 == "b":
+                    pq.dequeue()
+                    pq.displayNodes()
+        elif choice == 4:
+            infix_expression = input("Enter an infix expression using +, -, *, / operators and parenthesis: ")
+            print("the result is ", evaluateInfix(infix_expression))
+        elif choice == 5:
+            choice5 = ""
+            while choice5 != "f":
+                displayMenu5()
+                choice5 = input("enter your choice :")
+                if choice5 == "a":
+                    graph.addVertex()
+                    graph.displayGraph()
+                elif choice5 == "b":
+                    vertex1 = int(input("enter the number of the first vertex to add an edge between it and the second vertex : ")) -1
+                    vertex2 = int(input("enter the number of the the second vertex :")) -1
+                    graph.addEdge(vertex1,vertex2)
+                    graph.displayGraph()
+                elif choice5 == "c":
+                    vertex = int(input("enter the number of a vertex to remove it from the graph :")) -1
+                    graph.removeVertex(vertex)
+                    graph.displayGraph()
+                elif choice5 =="d":
+                    v1 = int(input("enter the number of the first vertex to remove an edge between it and the second vertex : ")) -1
+                    v2 = int(input("enter the number of the the second vertex :")) -1
+                    graph.removeEdge(v1,v2)
+                    graph.displayGraph()
+                elif choice5 =="e":
+                    n = int(input("enter a numerical value n to display all vertices with a degree of n or more :"))
+                    graph.displayVerticesDegree(n)
+        elif choice != 6:
+            print("Invalid input\n")
+            limit += 1
+            print("You have reached", limit, "/4 trys\n")
+    print("Goodbye! Have a nice day !")
 main()
